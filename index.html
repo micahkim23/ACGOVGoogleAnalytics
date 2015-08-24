@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Alameda County Google Analytics Data</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script type="text/javascript"
+    src='https://www.google.com/jsapi?autoload={"modules":[{"name":"visualization","version":"1"}]}'>
+  </script>
+
+  <!-- Visualization -->
+  <!-- https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart -->
+  <script type="text/javascript">
+    google.setOnLoadCallback(drawVisualization);
+
+    function drawVisualization() {
+		var coolWrapper = new google.visualization.ChartWrapper({
+          // Example Browser Share Query
+         "containerId": "suburban",
+                          // Example URL: http://your-application-id.appspot.com/query?id=QUERY_ID&format=data-table-response
+         "dataSourceUrl": "https://my-proxy-app12.appspot.com/query?id=ahBzfm15LXByb3h5LWFwcDEychULEghBcGlRdWVyeRiAgICA2reXCgw&format=data-table-response",
+         "refreshInterval": 86400,
+         "chartType": "LineChart",
+         "options": {
+            "showRowNumber" : true,
+            "width": 630,
+            "height": 300,
+            "is3D": true,
+            "title": "Top 5 Browsers last 5 days",
+         }
+       });
+	   
+	   var pageWrapper = new google.visualization.ChartWrapper({
+          // Example Browser Share Query
+         "containerId": "rural",
+                          // Example URL: http://your-application-id.appspot.com/query?id=QUERY_ID&format=data-table-response
+         "dataSourceUrl": "http://my-proxy-app12.appspot.com/query?id=ahBzfm15LXByb3h5LWFwcDEychULEghBcGlRdWVyeRiAgICA3pCBCgw&format=data-table-response",
+         "refreshInterval": 86400,
+         "chartType": "BarChart",
+		  //"view": {'rows': [{'id': '/', 'type': 'string', 'label': 'acgov.org/'}], [{'id': '/law/', 'type': 'string', 'label': 'acgov.org/law/'}]  },
+
+         "options": {
+            "showRowNumber" : true,
+            "width": 630,
+            "height": 300,
+            "is3D": true,
+            "title": "",
+         }
+       });
+	    var browserWrapper = new google.visualization.ChartWrapper({
+          // Example Browser Share Query
+         "containerId": "browser",
+                          // Example URL: http://your-application-id.appspot.com/query?id=QUERY_ID&format=data-table-response
+         "dataSourceUrl": "http://my-proxy-app12.appspot.com/query?id=ahBzfm15LXByb3h5LWFwcDEychULEghBcGlRdWVyeRiAgICAgICACgw&format=data-table-response",
+         "refreshInterval": 86400,
+         "chartType": "PieChart",
+         "options": {
+            "showRowNumber" : true,
+            "width": 630,
+            "height": 300,
+            "is3D": true,
+            "title": ""
+         }
+       });
+	   var crazyWrapper = new google.visualization.ChartWrapper({
+          // Example Browser Share Query
+         "containerId": "country",
+                          // Example URL: http://your-application-id.appspot.com/query?id=QUERY_ID&format=data-table-response
+         "dataSourceUrl": "http://my-proxy-app12.appspot.com/query?id=ahBzfm15LXByb3h5LWFwcDEychULEghBcGlRdWVyeRiAgICAq--WCgw&format=data-table-response",
+         "refreshInterval": 86400,
+         "chartType": "LineChart",
+         "options": {
+            "showRowNumber" : true,
+            "width": 630,
+            "height": 300,
+            "is3D": true,
+            "title": "Page Views for Past 30 Days"
+         }
+       });
+	  coolWrapper.draw();
+	  browserWrapper.draw();
+	  pageWrapper.draw();
+	  crazyWrapper.draw();
+	 
+	  }
+  </script>
+
+</head>	
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">View Data</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+					<li>
+						<a href="#ok">Pageviews</a>
+					</li>
+                    <li>
+                        <a href="#about">Browsers</a>
+                    </li>
+                    <li>
+                        <a href="#services">Webpages</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Source Mediums</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h2>Alameda County</h1>
+                <h2>Google Analytics</h2>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr class="featurette-divider">
+		<div class="featurette" id="ok">
+            <h2 class="featurette-heading">PageViews
+                <span class="text-muted">Past 30 Days</span>
+            </h2>
+            <p class="lead">This data shows the pageviews for the past 30 days.</p>
+        </div>
+		<div id="country" style="margin:auto;width:630px;height:300px;"></div>
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+		
+        <div class="featurette" id="about" >
+            <h2 class="featurette-heading">Top 5 Browsers
+                <span class="text-muted">Last 5 Days</span>
+            </h2>
+            <p class="lead">This data shows the top 5 browsers used to access our sites.</p>
+        </div>
+		<div id="suburban" style="margin:auto;width:630px;height:300px;"></div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <h2 class="featurette-heading">Top 10 Webpages 
+                <span class="text-muted">Last 7 Days</span>
+            </h2>
+            <p class="lead">ga:entrances -  number of entries by visitors into the pages of website</p>
+			<p class="lead">ga:bounces - number of single-page visits by visitors of website</p>
+        </div>
+		<div id="rural" style="margin:auto;width:630px;height:300px;"></div>
+
+        <hr class="featurette-divider">
+
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">           
+            <h2 class="featurette-heading">Top 5 Source Mediums
+                <span class="text-muted">Last 30 Days</span>
+            </h2>
+            <p class="lead">This is data that shows which search engines people use the most to get to our websites.</p>
+        </div>
+		<div id="browser" style="margin:auto;width:630px;height:300px;"></div>
+        <hr class="featurette-divider">
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Alameda County 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
