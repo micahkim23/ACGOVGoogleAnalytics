@@ -9,6 +9,7 @@ Uses [Google Analytics Superproxy](https://developers.google.com/analytics/solut
 Google Analytics Superproxy queries for data from Google Analytics and can interact with Google's APIs such as charts. The website grabs data from the server using dimensions, metrics, and an API query ID.
 
 Features of Google Analytics Superproxy:
+
 1. Multiple users can access quota data
 2. Data can be cached
 3. Auto-scheduling to update data
